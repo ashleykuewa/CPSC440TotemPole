@@ -1,9 +1,9 @@
 import subprocess
 
-filepath = 'Party.py'
+filepath = '../GitHub/CPSC440TotemPole/Party.py'
 try:
     while True: # input("Enter any key to continue...") != KeyboardInterrupt:
-        subprocess.call(filepath)  # Start the party
+        # subprocess.call(filepath)  # Start the party
         # Wait for file to end
         input("Enter any key to continue...")  # wait for user input
 except KeyboardInterrupt:
@@ -11,20 +11,20 @@ except KeyboardInterrupt:
 
 
 def forward(): # Forward button is pressed and the program increments the message array
-    with open("Fuel.txt") as f:
+    with open("../GitHub/CPSC440TotemPole/Fuel.txt") as f:
         lines = f.readlines()
         index = int(lines[0])
         if index > len(lines):
             lines[0] = index + 1
-    with open("Fuel.txt", "w") as f:
+    with open("../GitHub/CPSC440TotemPole/Fuel.txt", "w") as f:
         f.writelines(lines)
 
 
 def back(): # Back button is pressed and the program decrements the message array
-    with open("Fuel.txt") as f:
+    with open("../GitHub/CPSC440TotemPole/Fuel.txt") as f:
         lines = f.readlines()
         index = int(lines[0])
         if index != 0:
             lines[0] = index - 1
-    with open("Fuel.txt", "w") as f:
+    with open("../GitHub/CPSC440TotemPole/Fuel.txt", "w") as f:
         f.writelines(lines)
