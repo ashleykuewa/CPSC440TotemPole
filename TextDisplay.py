@@ -1,6 +1,6 @@
 import tkinter as tk
 import time
-f = open("Fuel.txt", "r") #../GitHub/CPSC440TotemPole/
+f = open("Fuel.txt", "r")   # ../GitHub/CPSC440TotemPole/
 textArray = f.readlines()
 index = int(textArray[0])
 lines = textArray[1:]
@@ -25,5 +25,5 @@ def shif():
 shif.msg = lines[index]
 shif()
 labl.pack()
-root.after(8000, lambda: root.quit()) #Run for 8 seconds
+root.after(8000, lambda: root.quit())   # Run for 8 seconds
 root.mainloop()
