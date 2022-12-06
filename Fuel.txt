@@ -1,0 +1,6 @@
+0
+Good morning CPSC 440!
+This is our project!
+Here is our code!
+Thank you for listening!
+Have a wonderful day :)
