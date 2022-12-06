@@ -1,4 +1,4 @@
-0
+2
 Good morning CPSC 440!
 This is our project!
 Here's snippets of our code!

@@ -1,30 +1,60 @@
-import subprocess
-import os
+#import TextDisplay.py
+from subprocess import call
+import RPi.GPIO as GPIO
+import time
 
-fuelpath = 'C:\\Users\\Origi\\Documents\\GitHub\\CPSC440TotemPole\\dist\\Fuel.txt'
+fuelpath = '/home/ashleyjosh/Documents/440Proj/CPSC440TotemPole-main/Fuel.txt'
 
 
 def main():
-    filepath = 'C:\\Users\\Origi\\Documents\\GitHub\\CPSC440TotemPole\\dist\\outer.exe'
+    GPIO.setmode (GPIO.BOARD)
+    GPIO.setwarnings(False)
+    
+    button1 = 8
+    button2 = 10
+    
+    GPIO.setup(button1, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+    GPIO.setup(button2, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
+    filepath = '/home/ashleyjosh/Documents/440Proj/CPSC440TotemPole-main/TextDisplay.py'
+    
     try:
-        while True:  # input("Enter any key to continue...") != KeyboardInterrupt:
-            os.startfile(filepath)
-            #subprocess.call(filepath)
+        while True:
+            print("Waiting for input")
+            if GPIO.input(button1) == GPIO.HIGH:
+                forward()
+                call(["python", "TextDisplay.py"])
+                #break
+            if GPIO.input(button2) == GPIO.HIGH:
+                back()
+                call(["python", "TextDisplay.py"])
+                #break
+            
+            #os.startfile(filepath)
+            #print("Party starting")
+            
+            #call(["python", "TextDisplay.py"])
+            # subprocess.Popen(['sh', filepath])
             # Start the party
             # Wait for file to end
-            key = input("Enter any key to continue...\n")  # wait for user input
-            if key == 'j':
-                forward()
-                os.startfile(filepath)
-            elif key == 'f':
-                back()
-                os.startfile(filepath)
-            elif key == 'q':
-                print("Program terminated")
-                break
-            else:
-                print("Only f and j are inputs")
+ 
+            # key = input("Enter any key to continue...\n")  # wait for user input
+            
+            
+            #print("Party ended")
+            #time.sleep(5.0)
+                
+            #if key == 'j':
+                #forward()
+                #call(["python", "TextDisplay.py"])
+            #elif key == 'f':
+                #back()
+                #call(["python", "TextDisplay.py"])
+            #elif key == 'q':
+                #print("Program terminated")
+                #break
+            #else:
+                #print("Only f and j are inputs")
     except KeyboardInterrupt:
         print("Terminated")
 
