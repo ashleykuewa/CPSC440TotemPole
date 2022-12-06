@@ -1,7 +1,6 @@
 0
-You sniffing what I'm shartin'
-Hernandez is
-Happy Lam
-
-
-
+Good morning CPSC 440!
+This is our project!
+Here's snippets of our code!
+Thank you for listening!
+Have a wonderful day :)
