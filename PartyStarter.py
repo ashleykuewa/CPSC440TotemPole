@@ -28,33 +28,7 @@ def main():
             if GPIO.input(button2) == GPIO.HIGH:
                 back()
                 call(["python", "TextDisplay.py"])
-                #break
-            
-            #os.startfile(filepath)
-            #print("Party starting")
-            
-            #call(["python", "TextDisplay.py"])
-            # subprocess.Popen(['sh', filepath])
-            # Start the party
-            # Wait for file to end
- 
-            # key = input("Enter any key to continue...\n")  # wait for user input
-            
-            
-            #print("Party ended")
-            #time.sleep(5.0)
-                
-            #if key == 'j':
-                #forward()
-                #call(["python", "TextDisplay.py"])
-            #elif key == 'f':
-                #back()
-                #call(["python", "TextDisplay.py"])
-            #elif key == 'q':
-                #print("Program terminated")
-                #break
-            #else:
-                #print("Only f and j are inputs")
+
     except KeyboardInterrupt:
         print("Terminated")
 
